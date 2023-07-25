@@ -20,6 +20,10 @@
                         <li><a href="email-inbox.html">Inbox</a></li>
                     </ul>
                 </li>
+
+                <li class="{{ request()->routeIs('settings') ? 'active' : '' }}">
+                    <a href="{{ route('settings') }}"><i class="fa fa-envelope"></i><span class="hide-menu">Settings</span></a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/settings', [SettingController::class, 'settings'])->name('settings');
+Route::post('/settings/update', [SettingController::class, 'updateSettings'])->name('settings.update');
+Route::post('/password/update', [SettingController::class, 'updatePassword'])->name('password.update');
