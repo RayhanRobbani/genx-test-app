@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SettingController;
 
 /*
@@ -29,3 +30,10 @@ Route::get('/dashboard', function () {
 Route::get('/settings', [SettingController::class, 'settings'])->name('settings');
 Route::post('/settings/update', [SettingController::class, 'updateSettings'])->name('settings.update');
 Route::post('/password/update', [SettingController::class, 'updatePassword'])->name('password.update');
+
+Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
+Route::get('/brands/create', [BrandController::class, 'create'])->name('brands.create');
+Route::post('/brands/store', [BrandController::class, 'store'])->name('brands.store');
+Route::get('/brands/edit/{brand}', [BrandController::class, 'edit'])->name('brands.edit');
+Route::post('/brands/update/{brand}', [BrandController::class, 'update'])->name('brands.update');
+Route::delete('/brands/destroy/{brand}', [BrandController::class, 'destroy'])->name('brands.destroy');
