@@ -6,11 +6,12 @@
         <!-- Bread crumb -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-primary">Edit Brand</h3></div>
+                <h3 class="text-primary">Create About Us</h3>
+            </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Edit Brand</li>
+                    <li class="breadcrumb-item active">Create About Us</li>
                 </ol>
             </div>
         </div>
@@ -23,32 +24,23 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-title">
-                            <h4>Brand</h4>
+                            <h4>About Us</h4>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="{{ route('brands.update', $brand) }}" method="POST" enctype="multipart/form-data">
-                                    @method('PUT')
+                                <form action="{{ route('aboutUs.store') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label for="title">Name</label>
-                                        <input type="text" name="title" id="title" class="form-control" placeholder="Name" value="{{ $brand->title }}" required>
+                                        <input type="text" name="title" id="title" class="form-control"
+                                            placeholder="Name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="logo">Site Logo</label>
-                                        <div class="pb-3">
-                                            <img src="{{ url('storage/' . $brand->logo) }}" alt="Brand Logo" width="100px">
-                                        </div>
-                                        <input type="file" name="logo" id="logo" class="form-control">
+                                        <label for="description">Description</label>
+                                        <input type="text" name="description" id="description" class="form-control"
+                                            placeholder="Description">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Status</label>
-                                        <select class="form-control" name="status">
-                                            <option value="0" @if ($brand->status == 0) selected @endif >Inactive</option>
-                                            <option value="1" @if ($brand->status == 1) selected @endif >Active</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-default">Update Brand</button>
+                                    <button type="submit" class="btn btn-default">Add Section</button>
                                 </form>
                             </div>
                         </div>
