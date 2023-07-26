@@ -24,12 +24,10 @@
                     <a href="{{ route('coupons.index') }}"><i class="fa fa-envelope"></i><span class="hide-menu">Coupons</span></a>
                 </li>
 
-                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span
+                <li> <a class="has-arrow {{ request()->routeIs('services.index') ? 'active' : '' }}" href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span
                             class="hide-menu">Main Page</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="email-compose.html">Compose</a></li>
-                        <li><a href="email-read.html">Read</a></li>
-                        <li><a href="email-inbox.html">Inbox</a></li>
+                        <li><a href="{{ route('services.index') }}">Services</a></li>
                     </ul>
                 </li>
 

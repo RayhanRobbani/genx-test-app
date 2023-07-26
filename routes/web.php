@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 
 /*
@@ -53,3 +54,10 @@ Route::post('/coupons/store', [CouponController::class, 'store'])->name('coupons
 Route::get('/coupons/edit/{coupon}', [CouponController::class, 'edit'])->name('coupons.edit');
 Route::put('/coupons/update/{coupon}', [CouponController::class, 'update'])->name('coupons.update');
 Route::delete('/coupons/destroy/{coupon}', [CouponController::class, 'destroy'])->name('coupons.destroy');
+
+Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
+Route::post('/services/store', [ServiceController::class, 'store'])->name('services.store');
+Route::get('/services/edit/{service}', [ServiceController::class, 'edit'])->name('services.edit');
+Route::put('/services/update/{service}', [ServiceController::class, 'update'])->name('services.update');
+Route::delete('/services/destroy/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
