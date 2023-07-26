@@ -20,6 +20,10 @@
                     <a href="{{ route('aboutUs.index') }}"><i class="fa fa-envelope"></i><span class="hide-menu">About Us</span></a>
                 </li>
 
+                <li class="{{ request()->routeIs('coupons.index') ? 'active' : '' }}">
+                    <a href="{{ route('coupons.index') }}"><i class="fa fa-envelope"></i><span class="hide-menu">Coupons</span></a>
+                </li>
+
                 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span
                             class="hide-menu">Main Page</span></a>
                     <ul aria-expanded="false" class="collapse">

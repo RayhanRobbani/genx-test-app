@@ -44,8 +44,8 @@
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="0" @if ($brand->status == 0) selected @endif >Inactive</option>
-                                            <option value="1" @if ($brand->status == 1) selected @endif >Active</option>
+                                            <option value="0" @selected($brand->status == 0)>Inactive</option>
+                                            <option value="1" @selected($brand->status == 1)>Active</option>
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-default">Update Brand</button>
