@@ -31,9 +31,9 @@ class SettingController extends Controller
         }
 
         if($request->hasFile('site_logo')) {
+            $name = time();
             $extension = $request->file('site_logo')->getClientOriginalExtension();
-            Storage::putFileAs('public', $request->file('site_logo'), 'site_logo.' . $extension);
-            $path = 'storage/site_logo.' . $extension;
+            $path = Storage::putFileAs('general', $request->file('site_logo'), $name . '.' . $extension);
 
             Setting::updateOrCreate(
                 ['key' => 'site_logo'],

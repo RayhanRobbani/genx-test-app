@@ -68,12 +68,15 @@ class BrandController extends Controller
             $name = time();
             $extension = $request->file('logo')->getClientOriginalExtension();
             $path = Storage::putFileAs('brands', $request->file('logo'), $name . '.' . $extension);
+
+            $brand->update([
+                'logo' => $path,
+            ]);
         }
 
         $brand->update([
             'title' => $request->title,
             'status' => $request->status,
-            'logo' => $path,
         ]);
 
         return redirect()->route('brands.index')->with('success', 'Brand edited successfully!');

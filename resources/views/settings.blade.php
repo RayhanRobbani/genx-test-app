@@ -151,7 +151,7 @@
                                                                         <div class="form-group">
                                                                             <label for="site_logo">Site Logo</label>
                                                                             <div class="pb-3">
-                                                                                <img src="{{ url($settings['site_logo']) }}" alt="Site Logo" width="100px">
+                                                                                <img src="{{ url('storage/' . $settings['site_logo']) }}" alt="Site Logo" width="100px">
                                                                             </div>
                                                                             <input type="file" name="site_logo"
                                                                                 id="site_logo" class="form-control">

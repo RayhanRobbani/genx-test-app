@@ -31,6 +31,14 @@
                     </ul>
                 </li>
 
+                <li> <a class="has-arrow {{ request()->routeIs('shippingCharges.index') || request()->routeIs('shippingProviders.index') ? 'active' : '' }}" href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span
+                            class="hide-menu">Shipping</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('shippingCharges.index') }}">Shipping Charges</a></li>
+                        <li><a href="{{ route('shippingProviders.index') }}">Shipping Providers</a></li>
+                    </ul>
+                </li>
+
                 <li class="{{ request()->routeIs('settings') ? 'active' : '' }}">
                     <a href="{{ route('settings') }}"><i class="fa fa-envelope"></i><span class="hide-menu">Settings</span></a>
                 </li>

@@ -71,13 +71,16 @@ class ServiceController extends Controller
             $name = time();
             $extension = $request->file('icon')->getClientOriginalExtension();
             $path = Storage::putFileAs('services', $request->file('icon'), $name . '.' . $extension);
+
+            $service->update([
+                'icon' => $path,
+            ]);
         }
 
         $service->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'status' => $request->status,
-            'icon' => $path,
         ]);
 
         return redirect()->route('services.index')->with('success', 'Service edited successfully!');

@@ -8,6 +8,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ShippingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,14 @@ Route::post('/services/store', [ServiceController::class, 'store'])->name('servi
 Route::get('/services/edit/{service}', [ServiceController::class, 'edit'])->name('services.edit');
 Route::put('/services/update/{service}', [ServiceController::class, 'update'])->name('services.update');
 Route::delete('/services/destroy/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
+
+Route::get('/shipping-charges', [ShippingController::class, 'shippingChargesIndex'])->name('shippingCharges.index');
+Route::get('/shipping-charges/edit/{shipping_charge}', [ShippingController::class, 'shippingChargesEdit'])->name('shippingCharges.edit');
+Route::put('/shipping-charges/update/{shipping_charge}', [ShippingController::class, 'shippingChargesUpdate'])->name('shippingCharges.update');
+
+Route::get('/shipping-providers', [ShippingController::class, 'shippingProvidersIndex'])->name('shippingProviders.index');
+Route::get('/shipping-providers/create', [ShippingController::class, 'shippingProvidersCreate'])->name('shippingProviders.create');
+Route::post('/shipping-providers/store', [ShippingController::class, 'shippingProvidersStore'])->name('shippingProviders.store');
+Route::get('/shipping-providers/edit/{shipping_provider}', [ShippingController::class, 'shippingProvidersEdit'])->name('shippingProviders.edit');
+Route::put('/shipping-providers/update/{shipping_provider}', [ShippingController::class, 'shippingProvidersUpdate'])->name('shippingProviders.update');
+Route::delete('/shipping-providers/destroy/{shipping_provider}', [ShippingController::class, 'shippingProvidersDestroy'])->name('shippingProviders.destroy');
