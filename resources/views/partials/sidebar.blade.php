@@ -31,6 +31,16 @@
                     </ul>
                 </li>
 
+                <li> <a class="has-arrow {{request()->routeIs('products.index') || request()->routeIs('productUnits.index') || request()->routeIs('productAttributes.index') || request()->routeIs('productTags.index') ? 'active' : '' }}" href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span
+                            class="hide-menu">Products</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('products.index') }}">Product List</a></li>
+                        <li><a href="{{ route('productUnits.index') }}">Units</a></li>
+                        <li><a href="{{ route('productAttributes.index') }}">Attributes</a></li>
+                        <li><a href="{{ route('productTags.index') }}">Tags</a></li>
+                    </ul>
+                </li>
+
                 <li> <a class="has-arrow {{ request()->routeIs('shippingCharges.index') || request()->routeIs('shippingProviders.index') ? 'active' : '' }}" href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span
                             class="hide-menu">Shipping</span></a>
                     <ul aria-expanded="false" class="collapse">

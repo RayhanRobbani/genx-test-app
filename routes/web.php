@@ -6,9 +6,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\ProductAttributeController;
+use App\Http\Controllers\ProductTagController;
+use App\Http\Controllers\ProductUnitController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ShippingController;
+use App\Models\ProductAttribute;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +77,24 @@ Route::post('/shipping-providers/store', [ShippingController::class, 'shippingPr
 Route::get('/shipping-providers/edit/{shipping_provider}', [ShippingController::class, 'shippingProvidersEdit'])->name('shippingProviders.edit');
 Route::put('/shipping-providers/update/{shipping_provider}', [ShippingController::class, 'shippingProvidersUpdate'])->name('shippingProviders.update');
 Route::delete('/shipping-providers/destroy/{shipping_provider}', [ShippingController::class, 'shippingProvidersDestroy'])->name('shippingProviders.destroy');
+
+Route::get('/product-units', [ProductUnitController::class, 'index'])->name('productUnits.index');
+Route::get('/product-units/create', [ProductUnitController::class, 'create'])->name('productUnits.create');
+Route::post('/product-units/store', [ProductUnitController::class, 'store'])->name('productUnits.store');
+Route::get('/product-units/edit/{unit}', [ProductUnitController::class, 'edit'])->name('productUnits.edit');
+Route::put('/product-units/update/{unit}', [ProductUnitController::class, 'update'])->name('productUnits.update');
+Route::delete('/product-units/destroy/{unit}', [ProductUnitController::class, 'destroy'])->name('productUnits.destroy');
+
+Route::get('/product-tags', [ProductTagController::class, 'index'])->name('productTags.index');
+Route::get('/product-tags/create', [ProductTagController::class, 'create'])->name('productTags.create');
+Route::post('/product-tags/store', [ProductTagController::class, 'store'])->name('productTags.store');
+Route::get('/product-tags/edit/{tag}', [ProductTagController::class, 'edit'])->name('productTags.edit');
+Route::put('/product-tags/update/{tag}', [ProductTagController::class, 'update'])->name('productTags.update');
+Route::delete('/product-tags/destroy/{tag}', [ProductTagController::class, 'destroy'])->name('productTags.destroy');
+
+Route::get('/product-attributes', [ProductAttributeController::class, 'index'])->name('productAttributes.index');
+Route::get('/product-attributes/create', [ProductAttributeController::class, 'create'])->name('productAttributes.create');
+Route::post('/product-attributes/store', [ProductAttributeController::class, 'store'])->name('productAttributes.store');
+Route::get('/product-attributes/edit/{attribute}', [ProductAttributeController::class, 'edit'])->name('productAttributes.edit');
+Route::put('/product-attributes/update/{attribute}', [ProductAttributeController::class, 'update'])->name('productAttributes.update');
+Route::delete('/product-attributes/destroy/{attribute}', [ProductAttributeController::class, 'destroy'])->name('productAttributes.destroy');
